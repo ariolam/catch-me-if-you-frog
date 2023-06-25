@@ -1,1 +1,113 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: "PT Sans Narrow", sans-serif;
+}
+.start-screen {
+    background-image: url(../images/froggy-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: none;
+}
+.start-screen h1 {
+    color: #ff7200;
+    line-height: 4em;
+    font-size: 5em;
+    letter-spacing: 1.3px;
+}
+.instructions-screen {
+    display: none;
+}
+.game-screen {
+    display: none;
+    background-image: url(../images/pond.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    animation: slide 3s ease-in 1s infinite;
+    position: relative;
+}
+@keyframes slide {
+    0% {
+        background-position: 1000px 0;
+    }
+    95% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 50px;
+    }
+}
+.game-screen h3 {
+    font-size: 2em;
+}
+.gameover-screen {
+    /* display: none; */
+    background-image: url(../images/lily-pad.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+.gameover-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 87vh;
+    position: absolute;
+    justify-content: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ff7200;
+    border-radius: 10% / 50%;
+}
+.gameover-container h2 {
+    margin: auto;
+    font-size: 5.5em;
+    letter-spacing: 1.3px;
+    margin-top: 55px;
+}
+.gameover-container h3 {
+    margin: auto;
+    font-size: 2.5em;
+    letter-spacing: 1.3px;
+}
+.play-btn,
+.intructions-btn,
+.restart-btn {
+    background-image: linear-gradient(
+        to right,
+        #f09819 0%,
+        #edde5d 51%,
+        #e0e314 100%
+    );
+    background-size: 200% auto;
+    padding: 0.8em 4em;
+    border: 0.16em solid transparent;
+    margin: 16em 1.3em 0.3em 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    transition: all 0.15s;
+    font-weight: 700;
+    font-size: 1em;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    letter-spacing: 2.3px;
+}
+.restart-btn {
+    margin: 7em 12em 3em 12em;
+}
 
+.play-btn:hover {
+    background-position: right center;
+}
+.intructions-btn:hover {
+    background-position: right center;
+}
+.restart-btn:hover {
+    background-position: right center;
+}
