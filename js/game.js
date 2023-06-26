@@ -6,6 +6,7 @@ class Game {
         this.gameoverScreen = document.querySelector(".gameover-screen");
         this.height = 900; /* to show the game, the div will never appear as it is 0 */
         this.width = 1500;
+        this.player = new Player(this.gameScreen);
     }
 
     start() {
