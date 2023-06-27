@@ -19,5 +19,16 @@ class Game {
         this.startScreen.style.display = "none";
         // Show the game screen
         this.gameScreen.style.display = "block";
+
+        // Start the game loop
+        this.gameLoop();
+    }
+    gameLoop() {
+        this.update();
+        requestAnimationFrame(() => this.gameLoop());
+    }
+    update() {
+        console.log("Update");
+        this.player.move();
     }
 }
