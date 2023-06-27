@@ -29,7 +29,7 @@ body {
     position: relative; /*important so we can place the player in absolute positioning */
 }
 
-/* @keyframes slide {
+@keyframes slide {
     0% {
         background-position: 1000px 0;
     }
@@ -39,7 +39,7 @@ body {
     100% {
         background-position: 0 50px;
     }
-} */
+}
 .game-screen h3 {
     font-size: 2em;
 }

@@ -6,7 +6,10 @@ class Game {
         this.gameoverScreen = document.querySelector(".gameover-screen");
         this.height = 900; /* to show the game, the div will never appear as it is 0 */
         this.width = 1500;
+
+        // added
         this.player = new Player(this.gameScreen);
+        this.points = [];
     }
 
     start() {
@@ -25,10 +28,16 @@ class Game {
     }
     gameLoop() {
         this.update();
+        if (Math.random() > 0.98) {
+            this.points.push(new Points(this.gameScreen));
+        }
         requestAnimationFrame(() => this.gameLoop());
     }
     update() {
         console.log("Update");
         this.player.move();
+        this.points.forEach((points) => {
+            points.move();
+        });
     }
 }
