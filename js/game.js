@@ -10,6 +10,12 @@ class Game {
         // added
         this.player = new Player(this.gameScreen);
         this.points = [];
+
+        //score
+        this.score = document.querySelector(".score-status");
+        this.scoreNumber = document.querySelector(".score-number");
+        this.scoreCounter = 0;
+        this.scoreNumber.innerHTML = 0;
     }
 
     start() {
@@ -29,15 +35,26 @@ class Game {
     gameLoop() {
         this.update();
         if (Math.random() > 0.98) {
+            // && this.points.length < 0.98
             this.points.push(new Points(this.gameScreen));
         }
         requestAnimationFrame(() => this.gameLoop());
     }
     update() {
-        console.log("Update");
         this.player.move();
+        const pointsTokeep = [];
         this.points.forEach((points) => {
             points.move();
+            if (this.player.didCollide(points)) {
+                points.element.remove();
+                this.scoreCounter += 1;
+                this.scoreNumber.innerHTML = `${this.scoreCounter}`;
+            } else {
+                pointsTokeep.push(points);
+            }
         });
+        this.points = pointsTokeep;
+        console.log(this.scoreCounter);
     }
+	
 }

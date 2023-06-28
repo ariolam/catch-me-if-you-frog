@@ -40,4 +40,21 @@ class Player {
     updatePosition() {
         this.element.style.top = `${this.top}px`;
     }
+    didCollide(points) {
+        //returns a DOMRect object providing information about the size of an element and its position relative to the viewport
+        const playerRect = this.element.getBoundingClientRect();
+        const pointsRect = points.element.getBoundingClientRect();
+
+        //check for overlap
+        if (
+            playerRect.left < pointsRect.right &&
+            playerRect.right > pointsRect.left &&
+            playerRect.top < pointsRect.bottom &&
+            playerRect.bottom > pointsRect.top
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
