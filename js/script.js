@@ -2,12 +2,15 @@ window.addEventListener("load", () => {
     const playBtn = document.querySelector(".play-btn");
     const restartBtn = document.querySelector(".restart-btn");
 
+    //Audio
+    const gameSound = new Audio("./sound/game.mp3");
+    gameSound.volume = 0.2;
+
     let game;
 
     function startGame() {
         game = new Game(); /*assign new variable to game object */
         game.start();
-
         //added event listerner that handles keydown event
         document.addEventListener("keydown", (event) => {
             event.preventDefault(); /* removes ths scroll bars in mac */
@@ -45,6 +48,7 @@ window.addEventListener("load", () => {
     }
 
     playBtn.addEventListener("click", function () {
+        gameSound.play();
         startGame();
     });
     restartBtn.addEventListener("click", () => {
