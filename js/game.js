@@ -14,8 +14,11 @@ class Game {
         //score
         this.score = document.querySelector(".score-status");
         this.scoreNumber = document.querySelector(".score-number");
+        this.totalScore = document.querySelector(".total-score");
+        this.gameoverMessage = document.querySelector(".gameover-message");
         this.scoreCounter = 0;
         this.scoreNumber.innerHTML = 0;
+        this.gameoverMessage.innerText = "";
     }
 
     start() {
@@ -28,6 +31,21 @@ class Game {
         this.startScreen.style.display = "none";
         // Show the game screen
         this.gameScreen.style.display = "block";
+
+        // start timer
+        setTimeout(() => {
+            this.gameScreen.style.display = "none";
+            this.gameoverScreen.style.display = "block";
+            this.totalScore.innerText = `Score: ${this.scoreCounter}`;
+
+            //gameover messages
+            if (this.scoreCounter <= 10) {
+                this.gameoverMessage.innerText = "Froggy is still starving!";
+            } else if (this.scoreCounter > 10) {
+                this.gameoverMessage.innerText =
+                    "Froggy is ready to start the bootcamp!";
+            }
+        }, 1000 * 20);
 
         // Start the game loop
         this.gameLoop();
@@ -56,5 +74,4 @@ class Game {
         this.points = pointsTokeep;
         console.log(this.scoreCounter);
     }
-	
 }

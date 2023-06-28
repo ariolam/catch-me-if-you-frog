@@ -1,5 +1,6 @@
 window.addEventListener("load", () => {
     const playBtn = document.querySelector(".play-btn");
+    const restartBtn = document.querySelector(".restart-btn");
 
     let game;
 
@@ -17,10 +18,10 @@ window.addEventListener("load", () => {
                 // Update player's directionX and directionY based on the key pressed
                 switch (key) {
                     case "ArrowUp":
-                        game.player.directionY = -1;
+                        game.player.directionY = -3;
                         break;
                     case "ArrowDown":
-                        game.player.directionY = 1;
+                        game.player.directionY = 3;
                         break;
                 }
             }
@@ -33,10 +34,10 @@ window.addEventListener("load", () => {
             if (possibleKeystrokes.includes(key)) {
                 switch (key) {
                     case "ArrowUp":
-                        game.player.directionY = 0;
+                        game.player.directionY = -3;
                         break;
                     case "ArrowDown":
-                        game.player.directionY = 0;
+                        game.player.directionY = 3;
                         break;
                 }
             }
@@ -45,5 +46,8 @@ window.addEventListener("load", () => {
 
     playBtn.addEventListener("click", function () {
         startGame();
+    });
+    restartBtn.addEventListener("click", () => {
+        location.reload(); /* in order to not create new instances instead of startGame() / directs to start screen */
     });
 });
