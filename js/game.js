@@ -40,12 +40,13 @@ class Game {
 
             //gameover messages
             if (this.scoreCounter <= 10) {
-                this.gameoverMessage.innerText = "Froggy is still starving!";
+                this.gameoverMessage.innerText =
+                    "Froggy is still starving! Try again!";
             } else if (this.scoreCounter > 10) {
                 this.gameoverMessage.innerText =
-                    "Froggy is ready to start the bootcamp!";
+                    "You made it! Froggy is ready to start the bootcamp!";
             }
-        }, 1000 * 20);
+        }, 20000);
 
         // Start the game loop
         this.gameLoop();

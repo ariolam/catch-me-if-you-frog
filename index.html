@@ -12,6 +12,10 @@
             href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
             rel="stylesheet"
         />
+        <script
+            src="https://kit.fontawesome.com/dc30d76cd6.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <main>
@@ -25,8 +29,17 @@
                     <div class="instructions-content">
                         <h3>Let's help our friend Froggy eat his lunch!</h3>
                         <p>
-                            Use the arrows up and down to move Froggy up and
-                            down and eat as many flies as possible.
+                            Use the arrows
+                            <i
+                                class="fa-solid fa-arrow-up fa-beat fa-lg"
+                                style="color: #ff7200"
+                            ></i>
+                            and
+                            <i
+                                class="fa-solid fa-arrow-down fa-beat fa-lg"
+                                style="color: #ff7200"
+                            ></i>
+                            to move Froggy and eat as many flies as possible.
                         </p>
                         <h4>Are you ready?</h4>
                         <button class="exit-instr-btn">Let's do it</button>
@@ -35,15 +48,15 @@
             </div>
             <!-- Game Screen -->
             <div class="game-screen">
-                <h3 class="score-status">
-                    Score: <span class="score-number">0</span>
-                </h3>
+                <div class="score-status">
+                    <h3>Score: <span class="score-number">0</span></h3>
+                </div>
             </div>
             <!-- Game Over Screen -->
             <div class="gameover-screen">
                 <div class="gameover-container">
                     <h2>Game Over</h2>
-                    <h3 class="total-score">Total score : 5</h3>
+                    <h3 class="total-score"></h3>
                     <h4 class="gameover-message"></h4>
                     <button class="restart-btn">Restart</button>
                 </div>

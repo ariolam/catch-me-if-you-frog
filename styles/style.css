@@ -5,24 +5,32 @@ body {
     font-family: "PT Sans Narrow", sans-serif;
 }
 .start-screen {
+    position: relative;
     background-image: url(../images/froggy-hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
-    /* display: none; */
 }
 .start-screen h1 {
     color: #ff7200;
-    line-height: 4em;
-    font-size: 5em;
+    line-height: 3em;
+    font-size: 6em;
     letter-spacing: 1.3px;
+    text-shadow: 1px 1px 1px #ff7200, 1px 2px 1px#ff7200, 1px 3px 1px #ff7200,
+        1px 4px 1px #ff7200, 1px 5px 1px #ff7200, 1px 6px 1px #ff7200,
+        1px 10px 5px rgba(119, 119, 119, 0.5),
+        1px 15px 10px rgba(119, 119, 119, 0.5),
+        1px 20px 30px rgba(119, 119, 119, 0.5),
+        1px 25px 50px rgba(119, 119, 119, 0.5);
 }
 .instructions-screen {
     display: none;
     width: 500px;
-    height: 0px;
-    position: relative;
+    position: absolute;
     margin: auto;
+    left: 500px;
+    top: 500px;
 }
 .instructions-content {
     display: flex;
@@ -31,11 +39,20 @@ body {
     width: 87vh;
     position: absolute;
     justify-content: center;
-    top: 60%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #ff7200;
+    border: 2px solid #ff7200;
     border-radius: 10% / 50%;
+}
+.instructions-content h3 {
+    font-size: 2em;
+}
+.instructions-content h4 {
+    font-size: 1.5em;
+}
+.instructions-content p {
+    font-size: 1.3em;
 }
 .game-screen {
     position: relative; /*important so we can place the player in absolute positioning */
@@ -47,7 +64,7 @@ body {
     background-position: center;
 }
 
-@keyframes slide {
+/* @keyframes slide {
     0% {
         background-position: 1500px 0;
     }
@@ -57,10 +74,19 @@ body {
     100% {
         background-position: -50px 0;
     }
-}
-.game-screen h3 {
+} */
+.score-status {
+    font-size: 2em;
+    text-shadow: rgb(69, 69, 69) 0.1em 0.1em 0.2em;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    box-shadow: hsl(0deg 0% 100%) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    height: 60px;
+    color: #ff7200;
     font-size: 2em;
 }
+
 .gameover-screen {
     display: none;
     background-image: url(../images/lily-pad.jpg);
@@ -68,30 +94,36 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     position: relative;
+    background-position: center;
 }
 .gameover-container {
     display: flex;
     flex-direction: column;
     background: white;
     width: 87vh;
+    height: 60vh;
     position: absolute;
-    justify-content: center;
+    justify-content: space-between;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #ff7200;
+    border: 2px solid #ff7200;
     border-radius: 10% / 50%;
 }
 .gameover-container h2 {
     margin: auto;
-    font-size: 5.5em;
+    font-size: 4em;
     letter-spacing: 1.3px;
     margin-top: 55px;
+    text-shadow: #ff7200 0.1em 0.1em 0.2em;
 }
-.gameover-container h3 {
+.total-score {
     margin: auto;
     font-size: 2.5em;
     letter-spacing: 1.3px;
+}
+.gameover-message {
+    font-size: 1.5em;
 }
 .play-btn,
 .intructions-btn,
@@ -106,7 +138,6 @@ body {
     background-size: 200% auto;
     padding: 0.8em 4em;
     border: 0.16em solid transparent;
-    margin: 16em 1.3em 0.3em 0;
     text-transform: uppercase;
     color: #ffffff;
     transition: all 0.15s;
@@ -116,8 +147,12 @@ body {
     border-radius: 10px;
     letter-spacing: 2.3px;
 }
+.play-btn,
+.intructions-btn {
+    margin: 12em 1.5em 0.3em 1em;
+}
 .restart-btn {
-    margin: 7em 12em 3em 12em;
+    margin: 4em 12em 3em 12em;
 }
 .exit-instr-btn {
     margin: 3em 10em 3em 10em;
@@ -126,6 +161,9 @@ body {
     background-position: right center;
 }
 .intructions-btn:hover {
+    background-position: right center;
+}
+.exit-instr-btn:hover {
     background-position: right center;
 }
 .restart-btn:hover {

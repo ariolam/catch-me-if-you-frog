@@ -27,10 +27,10 @@ window.addEventListener("load", () => {
                 // Update player's directionX and directionY based on the key pressed
                 switch (key) {
                     case "ArrowUp":
-                        game.player.directionY = -3;
+                        game.player.directionY = -2;
                         break;
                     case "ArrowDown":
-                        game.player.directionY = 3;
+                        game.player.directionY = 2;
                         break;
                 }
             }
@@ -43,10 +43,10 @@ window.addEventListener("load", () => {
             if (possibleKeystrokes.includes(key)) {
                 switch (key) {
                     case "ArrowUp":
-                        game.player.directionY = -3;
+                        game.player.directionY = -2;
                         break;
                     case "ArrowDown":
-                        game.player.directionY = 3;
+                        game.player.directionY = 2;
                         break;
                 }
             }
