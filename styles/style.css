@@ -19,6 +19,23 @@ body {
 }
 .instructions-screen {
     display: none;
+    width: 500px;
+    height: 0px;
+    position: relative;
+    margin: auto;
+}
+.instructions-content {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 87vh;
+    position: absolute;
+    justify-content: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ff7200;
+    border-radius: 10% / 50%;
 }
 .game-screen {
     display: none;
@@ -77,7 +94,8 @@ body {
 }
 .play-btn,
 .intructions-btn,
-.restart-btn {
+.restart-bt,
+.exit-instr-btn {
     background-image: linear-gradient(
         to right,
         #f09819 0%,
@@ -97,7 +115,8 @@ body {
     border-radius: 10px;
     letter-spacing: 2.3px;
 }
-.restart-btn {
+.restart-btn,
+.exit-instr-btn {
     margin: 7em 12em 3em 12em;
 }
 

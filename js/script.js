@@ -1,10 +1,16 @@
 window.addEventListener("load", () => {
+    //Buttons
     const playBtn = document.querySelector(".play-btn");
+    const intructionsBtn = document.querySelector(".intructions-btn");
+    const exitInstrBtn = document.querySelector(".exit-instr-btn");
     const restartBtn = document.querySelector(".restart-btn");
 
     //Audio
     const gameSound = new Audio("./sound/game.mp3");
     gameSound.volume = 0.2;
+
+    //Instructions screen
+    const intructionsScreen = document.querySelector(".instructions-screen");
 
     let game;
 
@@ -50,6 +56,12 @@ window.addEventListener("load", () => {
     playBtn.addEventListener("click", function () {
         gameSound.play();
         startGame();
+    });
+    intructionsBtn.addEventListener("click", function () {
+        intructionsScreen.style.display = "block";
+    });
+    exitInstrBtn.addEventListener("click", function () {
+        intructionsScreen.style.display = "none";
     });
     restartBtn.addEventListener("click", () => {
         location.reload(); /* in order to not create new instances instead of startGame() / directs to start screen */
