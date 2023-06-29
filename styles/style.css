@@ -38,23 +38,24 @@ body {
     border-radius: 10% / 50%;
 }
 .game-screen {
+    position: relative; /*important so we can place the player in absolute positioning */
     display: none;
     background-image: url(../images/pond.jpg);
     background-size: cover;
     overflow: hidden;
-    animation: slide 5s ease-in infinite;
-    position: relative; /*important so we can place the player in absolute positioning */
+    animation: slide 8s linear infinite;
+    background-position: center;
 }
 
 @keyframes slide {
     0% {
-        background-position: 1000px 0;
+        background-position: 1500px 0;
     }
     95% {
         background-position: 0 0;
     }
     100% {
-        background-position: 0 50px;
+        background-position: -50px 0;
     }
 }
 .game-screen h3 {
@@ -94,7 +95,7 @@ body {
 }
 .play-btn,
 .intructions-btn,
-.restart-bt,
+.restart-btn,
 .exit-instr-btn {
     background-image: linear-gradient(
         to right,
@@ -115,11 +116,12 @@ body {
     border-radius: 10px;
     letter-spacing: 2.3px;
 }
-.restart-btn,
-.exit-instr-btn {
+.restart-btn {
     margin: 7em 12em 3em 12em;
 }
-
+.exit-instr-btn {
+    margin: 3em 10em 3em 10em;
+}
 .play-btn:hover {
     background-position: right center;
 }
