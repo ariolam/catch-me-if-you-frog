@@ -8,12 +8,12 @@ Catch me if you Frog is a game where the player will help our friend Froggy to e
 
 ## MVP
 
-🪰 Froggy moves up and down with the arrow between the edges of the screen.
-🪰 Flies are moving towards him.
-🪰 Froggy is eating them.
-🪰 The score is calculated based on the amount of flies collected.
-🪰 The game ends when the time is up.
-🪰 The score is displayed at the end of the game.
+- 🪰 Froggy moves up and down with the arrow between the edges of the screen.
+- 🪰 Flies are moving towards him.
+- 🪰 Froggy is eating them.
+- 🪰 The score is calculated based on the amount of flies collected.
+- 🪰 The game ends when the time is up.
+- 🪰 The score is displayed at the end of the game.
 
 ## Backlog
 
