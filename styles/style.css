@@ -64,7 +64,7 @@ body {
     background-position: center;
 }
 
-/* @keyframes slide {
+@keyframes slide {
     0% {
         background-position: 1500px 0;
     }
@@ -74,7 +74,7 @@ body {
     100% {
         background-position: -50px 0;
     }
-} */
+}
 .score-status {
     font-size: 2em;
     text-shadow: rgb(69, 69, 69) 0.1em 0.1em 0.2em;
